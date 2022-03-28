@@ -131,13 +131,9 @@ function findVegetarianDishes() {
         if(vegDish.cuisine === "Vegetarian"){
             return true;
         }
-        else {
-            return false;
-        }
     })
     return results;
 }
-
 let vegetarianFood = findVegetarianDishes();
 console.log('Vegetarian Foods: ', vegetarianFood)
 
@@ -215,12 +211,27 @@ console.log(cuisineNames)
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map
 
+let newDishName = dishes.map(changeName);
+function changeName(dish) {
+    return(dish.name = dish.cuisine + " " + dish.name)
+}
 
+console.log(newDishName);
 
-//8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
+//8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects.
+//So this function should return objects 11 - 13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
 //Map, Filter
 
-
+function newVegetarianDishes() {
+    let results = dishes.filter(function(vegDish){
+        if(vegDish.cuisine === "Vegetarian"){
+            return true;
+        }
+    })
+    return results;
+}
+let vegetarianFood1 = newVegetarianDishes();
+console.log('Vegetarian Foods: ', vegetarianFood1)
 
 //BONUS
 //9. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
